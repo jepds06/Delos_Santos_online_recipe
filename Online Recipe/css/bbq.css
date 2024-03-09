@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    place-content: center;
+    line-height: 1.4;
+    background-image: url("/imgs/pexels-lukas-616401.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+header{
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    position: relative;
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+header .navbar a {
+    color: #000;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+    transition-property: background;
+}
+header .navbar a:not(:last-child){
+    margin-right: 30px;
+}
+header .navbar a:hover{
+    background: #fff;
+}
+label{
+    display: none;
+}
+#check{
+    z-index: 3;
+    display: none;
+}
+@media (max-width: 960px) {
+    header .navbar{
+        display:none;
+    }
+
+    label{
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    
+    label:hover{
+        color: #fff;
+    }
+
+    label .close-btn{
+        display: none;
+    }
+    label .menu-btn{
+        position: absolute;
+    }
+
+    #check:checked ~ header .navbar{
+        z-index: 2;
+        position: fixed;
+        background: rgba(197, 205, 207, 0.9);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #check:checked ~ header .navbar a{
+        font-weight: 700;
+        margin-right: 0;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+    }
+    #check:checked ~ header label .menu-btn{
+        display: none;
+    }
+    #check:checked ~ header label .close-btn{
+        z-index: 2;
+        display: block;
+        position: fixed;
+    }
+    header .logo{
+        position: absolute;
+        bottom: -6px;
+    }
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+h1{
+    font-weight: 700;
+    color: darkred;
+    font-size: 2.8rem;
+}
+h3{
+    font-weight: 700;
+    color: black;
+    font-size: 30px;
+}
+.rcpe-steps{
+    margin: 1rem;
+}
+ul{
+    padding-left: 1.25rem;
+}
+ul li::marker{
+    font-weight: bold;
+}
+ul li{
+    margin-bottom: .5rem;
+}
+ul li span{
+    margin: 1rem;
+    font-weight: 700;
+}
+hr{
+    margin: 1.5rem;
+    border: 1px solid;
+}
+.rcpe-container{
+    max-width: 800px;;
+    background-color: whitesmoke;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+.rcpe-container .rcpe-img{
+    padding: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.rcpe-container .rcpe-img img{
+    border-radius: 1rem;
+}
+.ingredients li{
+    margin-bottom: .5rem;
+}
+.ingredients li span{
+    font-weight: initial;
+}
+.rcpe-instructions .item{
+    padding-left: .5rem;
+    margin-bottom: .5rem;
+    display: flex;
+}
+.rcpe-instructions .item .num{
+    margin-right: 1rem;
+    font-weight:700;
+}
+.rcpe-instructions .item p span{
+    font-weight: 700;
+}
+@media (max-width: 540px){
+    h1{
+        margin-top: 2rem;
+    }
+    .rcpe-container{
+        margin: 0;
+    }
+    .rcpe-container .rcpe-img{
+        padding: 0;
+        border-radius: 0;
+    }
+    .rcpe-container .rcpe-img img {
+        border-radius: 0;
+    }
+}
